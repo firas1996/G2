@@ -1,0 +1,56 @@
+body{
+    background-color: #a28dcd;
+}
+h1,h2{
+    color: red;
+}
+
+h1{
+    text-align: center;
+    color: green;
+}
+tbody td {
+    font-weight: bold;
+}
+
+p{
+    text-align: justify;
+}
+.special{
+    color: red ;
+}
+table {
+    background-color: lightgray;
+    /* float: right; */
+    margin: 25px;
+}
+.tab{
+    display: flex;
+    justify-content: space-between;
+}
+thead {
+    background-color: yellow;
+}
+.titles{
+    font-style: italic;
+}
+.image {
+    text-align: center;
+    position: relative;
+}
+.mid{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-40%,-70%);
+}
+
+img {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border:  4px dashed red;
+    padding: 5px;
+    opacity: 0.4;
+    transform: rotate(45deg);
+}

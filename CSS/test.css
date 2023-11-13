@@ -1,0 +1,42 @@
+body{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+}
+div{
+    background-color: blueviolet;
+    display: inherit;  /* get the display type from your parent */
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    width: 22%;
+    height: 200px;
+    margin-bottom: 20px;
+}
+/* Meida Gen2 *
+@media screen/
+/* media Gen3 */
+/* @media (max-width:1000px)and(min-width:200px){
+    div{
+        background-color: red;
+    }
+} */
+/* Meia Gen4 */
+@media (800px <= width <1100px){
+    div{
+        width: 30%;
+    }
+}
+@media (400px <= width <800px){
+    div{
+        width: 45%;
+    }
+}
+@media ( width <400px){
+    div{
+        width: 80%;
+    }
+}
