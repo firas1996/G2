@@ -75,7 +75,9 @@ const subarray = (t1, t2) => {
   }
   return t3;
 };
-const subarray2 = (t1, t2) => {};
+const subarray2 = (t1, t2) => {
+  return t2.filter((item) => !t1.includes(item));
+};
 let t2 = [1, 5, 4, 2, 8, 9, 3, 11, 2, 5];
 let t1 = [1, 2, 3];
-console.log(subarray(t1, t2));
+console.log(subarray2(t1, t2));
