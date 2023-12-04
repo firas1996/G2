@@ -109,17 +109,42 @@ console.log(arrayReverse([1, 2, 3, 4]));*/
 //console.log(maxarray(t));
 
 /////////////////
-const check = (m) => {
-  if (m % 2 === 0) {
-    return "even";
-  } else {
-    return "odd";
+// const check = (m) => {
+//   if (m % 2 === 0) {
+//     return "even";
+//   } else {
+//     return "odd";
+//   }
+// };
+// console.log(check(2));
+// console.log(check(7));
+// const represenet = (obj) => {
+//   return `${obj.name} is ${obj.age} . the qddress is ${obj.address}`;
+// };
+// const prs = { name: "wassim", age: "27", address: "rue " };
+// console.log(represenet(prs));
+
+// const sort = (t) => {
+//   let t2=[]
+//   for(let i =0;i<t.length-1;i++){
+//     let max = Math.max(...t.slice(i))
+
+//   }
+//   return t
+// };
+
+// t = [9, 4, 1, 2, 7, 5, 2];
+// console.log(sort(t));
+
+function myFunction() {
+  let x = document.getElementById("numb").value;
+  if (isNaN(x)) {
+    alert("not a number!");
+    return;
   }
-};
-console.log(check(2));
-console.log(check(7));
-const represenet = (obj) => {
-  return `${obj.name} is ${obj.age} . the qddress is ${obj.address}`;
-};
-const prs = { name: "wassim", age: "27", address: "rue " };
-console.log(represenet(prs));
+  if (1 <= x && x <= 10) {
+    alert(x);
+  } else {
+    alert("out of interval !");
+  }
+}

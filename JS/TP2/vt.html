@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vache Taureau</title>
+</head>
+
+<body>
+    <h1>Vache Taureau</h1>
+    <button onclick="getNumber()">Get number</button>
+    <h4><strong>NB: </strong> les chifres must be 3 digits and distinct !!!</h4>
+    <input id="num" type="number" minlength="3" maxlength="3" />
+    <button onclick="check()">Check !</button>
+    <h3 id="count"></h3>
+    <p id="result"></p>
+    <script>
+        let myNub = ""
+        let count = 0
+        const getNumber = () => {
+            let a, b, c
+            count = 0
+            a = parseInt(Math.random() * 9 + 1)
+            do {
+                b = parseInt(Math.random() * 10)
+            } while (b === a)
+            do {
+                c = parseInt(Math.random() * 10)
+            } while (c === a || c === b)
+            myNub = a.toString() + b.toString() + c.toString()
+            console.log(myNub)
+            document.getElementById("num").value = ""
+            document.getElementById("count").innerHTML = ""
+            document.getElementById("result").innerHTML += ""
+        }
+        const check = () => {
+            let v = 0;
+            let t = 0
+            let gs = document.getElementById("num").value
+            if (!gs.length) alert("invalid input !!!")
+            else {
+                count++
+                if (gs === myNub) {
+                    alert("Congrats !!!")
+                }
+                else {
+                    for (let i = 0; i < 3; i++) {
+                        if (myNub.includes(gs.charAt(i))) {
+                            if (myNub.charAt(i) === gs.charAt(i)) {
+                                t++
+                            }
+                            else {
+                                v++
+                            }
+                        }
+                    }
+                }
+
+                document.getElementById("count").innerHTML = `Counts: ${count}`
+                document.getElementById("result").innerHTML += `${gs}: T= ${t} || V= ${v} </br>`
+            }
+
+        }
+    </script>
+</body>
+
+</html>
