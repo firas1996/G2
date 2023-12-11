@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+</head>
+
+<body>
+    <h1>Task Tracker</h1>
+    <form id="task-form">
+        <label>Task Name:</label>
+        <input type="text" id="task-name" placeholder="Task Name" required /></br>
+        <label>Task Description:</label>
+        <input type="text" id="task-description" placeholder="Task Description" required /></br>
+        <label>Task Date:</label>
+        <input type="date" id="task-date" placeholder="Task Date" required /></br>
+        <button type="submit">Add Task</button>
+    </form>
+    <div id="list"></div>
+    <script>
+        let taskList = document.getElementById("list")
+        let taskForm = document.getElementById("task-form")
+        let tasks=[]
+        taskForm.addEventListener("submit",(event)=>{
+            event.preventDefault()
+            const taskName = document.getElementById("task-name").value
+            const taskDescription = document.getElementById("task-description").value
+            const taskDate = document.getElementById("task-date").value
+            const taskData={
+                name:taskName,
+                description : taskDescription,
+                date:taskDate
+            }
+            tasks.push(taskData)
+            console.log(tasks)
+            displayTasks()
+            document.getElementById("task-form").reset()
+        })
+        const displayTasks =()=>{
+            taskList.innerHTML=""
+            tasks.forEach((task,index)=>{
+                let myElem = document.createElement("div")
+                myElem.setAttribute("id","task-"+index)
+                // myElem.setAttribute("class","task")
+                let taskName = document.createElement("h2")
+                taskName.textContent = task.name
+                let taskDescription = document.createElement("p")
+                taskDescription.textContent = task.description
+                let taskDate = document.createElement("p")
+                taskDate.textContent = task.date
+                let removeBtn = document.createElement("button")
+                removeBtn.textContent = "Remove"
+                removeBtn.addEventListener("click",()=>{
+                    tasks.splice(index,1)
+                    displayTasks()
+                })
+
+
+                myElem.appendChild(taskName)
+                myElem.appendChild(taskDescription)
+                myElem.appendChild(taskDate)
+                myElem.appendChild(removeBtn)
+                taskList.appendChild(myElem)
+
+
+            })
+        }
+
+    </script>
+
+</body>
+
+</html>
